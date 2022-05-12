@@ -38,10 +38,18 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
               },
+              {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+              },
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     plugins: [
         new HtmlWebpackPlugin({

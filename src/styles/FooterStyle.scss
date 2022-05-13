@@ -1,0 +1,44 @@
+footer{
+    display: block;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    bottom: 0.4%;
+    left: 31.5%;
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+    li{
+        list-style-type: none; 
+        font-size: 0.95em;
+        font-weight: 400;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(23, 26, 32, 0.8);
+
+        a{
+            margin: 9px;
+            display:black;
+            color: rgb(39, 39, 39);
+            text-decoration: none;
+            display: block;
+            padding: 0px;
+            border-radius: 15px;
+            //position: absolute;
+            font-family: Raleway-Light;
+            font-weight: 600;
+            font-size: 0.73em;
+            letter-spacing: 1px;
+        }
+    }
+    }
+}
+
+#Charger{
+
+}
+
+.footermain{
+    //opacity: 0;
+  }

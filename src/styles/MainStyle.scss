@@ -1,3 +1,12 @@
+$fontExtension: ".ttf";
+$importFonts: "Raleway-Black", "Raleway-Bold", "Raleway-Light", "Raleway-Regular";
+@each $importFonts in $importFonts{
+    @font-face{
+        font-family: $importFonts;
+        src: url("../fonts/" + $importFonts + $fontExtension);
+    }
+}
+
 //Reset all standard stuff
 body, html, div, p, h2{
     margin: 0;
@@ -30,18 +39,21 @@ body, html, div, p, h2{
     justify-content: center;
 
     h2{
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: 12px;
+        font-family: Raleway-Regular;
     }
     p{
-        font-size: 1.1em;
+        font-size: 1em;
+        font-family: Raleway-Regular;
     }
     scroll-snap-align: start;
 }
 
 .PageBodyText{
-    position: absolute;
-    margin-bottom: 23%;
+    //position: absolute;
+    //margin-bottom: 23%;
+    margin-bottom: -6%;
     text-align: center;
 }
 
@@ -53,6 +65,22 @@ body, html, div, p, h2{
     //background-color: lightblue;
 }
 
+
+
+.PageButton{
+    margin: 13px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-weight: 500;
+    font-size: 0.83em;
+    font-family: Raleway-Regular;
+}
+
 .BtnBlack{
     background-color: rgba(23, 26, 32, 0.8);
     backdrop-filter: blur(8px);
@@ -62,25 +90,14 @@ body, html, div, p, h2{
     background-color: rgba(244, 244, 244, 0.65);
     backdrop-filter: blur(8px);
     color: black;
-}
-
-.PageButton{
-    margin: 15px;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    border: 0px;
-    border-radius: 25px;
-    padding-left: 68px;
-    padding-right: 68px;
-    font-weight: 500;
-    font-size: 0.9em;
+    padding-left: 55px;
+    padding-right: 55px;
 }
 
 .PageBody a{
     color: black;
-    text-decoration: none;
-    border-bottom: 1px solid black;
+    //text-decoration: none;
+    //border-bottom: 1px solid black;
 }
 
 .PageHeader{
@@ -125,7 +142,7 @@ nav ul{
 nav ul li{
     list-style-type: none; 
     font-size: 0.95em;
-    font-weight: 600;
+    font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(23, 26, 32, 0.8);
     margin: 15px;
@@ -142,6 +159,9 @@ nav ul li{
         -ms-transition: background-color 400ms ease-in-out;
         transition: background-color 400ms ease-in-out;
         //position: absolute;
+        font-family: Raleway-Light;
+        font-weight: 1000;
+        font-size: 0.9em;
     }
     a:hover{
         background-color: rgba(11, 11, 58, 0.05);
@@ -151,6 +171,6 @@ nav ul li{
     margin-top: 50px;
     margin-left: 50px;
     color: black;
-    height: 1em;
+    height: 0.75em;
     //width: 1em;
 }

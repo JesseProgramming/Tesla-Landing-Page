@@ -24,12 +24,13 @@ html{
     overflow-x: hidden;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .PageBody{
 
     scroll-snap-align: start;
-
+    
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;

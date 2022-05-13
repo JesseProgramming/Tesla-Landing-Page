@@ -11,7 +11,10 @@ $importFonts: "Raleway-Black", "Raleway-Bold", "Raleway-Light", "Raleway-Regular
 body, html, div, p, h2{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    //overflow: hidden;
+}
+html{
+    //max-height: ;
 }
 
 .MainHeader{
@@ -40,6 +43,7 @@ body, html, div, p, h2{
 
     h2{
         font-size: 2.5em;
+        margin-top: 500px;
         margin-bottom: 12px;
         font-family: Raleway-Regular;
     }
@@ -68,17 +72,17 @@ body, html, div, p, h2{
 
 
 .PageButton{
+    width: 260px;
     margin: 13px;
     border: none;
     padding: 12px;
     cursor: pointer;
     border: 0px;
     border-radius: 25px;
-    padding-left: 70px;
-    padding-right: 70px;
     font-weight: 500;
     font-size: 0.83em;
     font-family: Raleway-Regular;
+    margin-bottom: 450px;
 }
 
 .BtnBlack{
@@ -104,73 +108,4 @@ body, html, div, p, h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     font-weight: 600;
-}
-
-.NavBarHeader{
-    //float:right;
-}
-.NavBarHeader nav{
-    display: block;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    
-    
-}
-#NavRight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float:right;
-    margin-left: 165%;
-    margin-top: -6%;
-    position: absolute;
-}
-#NavLeft{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float:right;
-}
-
-nav ul{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav ul li{
-    list-style-type: none; 
-    font-size: 0.95em;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgba(23, 26, 32, 0.8);
-    margin: 15px;
-    a{
-        display:black;
-        color: black;
-        text-decoration: none;
-        display: block;
-        padding: 10px;
-        border-radius: 15px;
-        -webkit-transition: background-color 400ms ease-in-out;
-        -moz-transition: background-color 400ms ease-in-out;
-        -o-transition: background-color 400ms ease-in-out;
-        -ms-transition: background-color 400ms ease-in-out;
-        transition: background-color 400ms ease-in-out;
-        //position: absolute;
-        font-family: Raleway-Light;
-        font-weight: 1000;
-        font-size: 0.9em;
-    }
-    a:hover{
-        background-color: rgba(11, 11, 58, 0.05);
-    }
-}
-.NavBarHeader a svg{
-    margin-top: 50px;
-    margin-left: 50px;
-    color: black;
-    height: 0.75em;
-    //width: 1em;
 }

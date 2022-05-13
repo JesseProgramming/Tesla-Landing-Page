@@ -1,0 +1,79 @@
+.NavBarHeader{
+    position: fixed;
+    width: 95%;
+    margin-top: 1.75%;
+}
+
+nav {
+    display: flex;
+    align-items: stretch;
+        align-items: center;
+    justify-content: center;
+  }
+
+nav > ul {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li {
+    list-style-type: none; 
+    margin: 10px;
+    white-space: nowrap;
+}
+.navLeft{
+    flex-grow: 1;
+}
+.navMid{
+    flex-grow: 4;
+}
+
+.navRight{
+    flex-grow: 1;
+    margin-right: -3%;
+}
+
+.navRight li, .navMid li{
+    list-style-type: none; 
+    font-size: 0.95em;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(23, 26, 32, 0.8);
+    a{
+        margin: -5px;
+        display:black;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border-radius: 15px;
+        -webkit-transition: background-color 400ms ease-in-out;
+        -moz-transition: background-color 400ms ease-in-out;
+        -o-transition: background-color 400ms ease-in-out;
+        -ms-transition: background-color 400ms ease-in-out;
+        transition: background-color 400ms ease-in-out;
+        //position: absolute;
+        font-family: Raleway-Light;
+        font-weight: 1000;
+        font-size: 0.55em;
+    }
+    a:hover{
+        background-color: rgba(11, 11, 58, 0.05);
+    }
+}
+
+
+.NavBarHeader a svg{
+    margin-top: 20px;
+    padding-bottom: 30px;
+    margin-left: -75px;
+    margin-right: 150px;
+    color: black;
+    height: 0.4em;
+    //width: 1em;
+}

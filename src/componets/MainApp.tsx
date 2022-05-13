@@ -1,8 +1,12 @@
 import React from 'react';
 import '../styles/MainStyle.scss';
+import '../styles/NavTest2.scss';
 import '../styles/FooterStyle.scss';
 import '../styles/BounceArrow.scss';
-import '../styles/test.css';
+//import '../styles/NavStyleTest.scss';
+//import '../styles/NavStyle.scss';
+
+//import '../styles/test.css';
 // @ts-ignore
 import RenderPageBody from './/RenderPageBody.tsx'
 // @ts-ignore

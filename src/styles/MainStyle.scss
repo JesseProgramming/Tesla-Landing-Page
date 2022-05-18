@@ -13,15 +13,12 @@ body, html, div, p, h2{
     padding: 0;
     //overflow: hidden;
 }
-html{
-    //max-height: ;
-}
 
 .MainHeader{
     
     height: 100vh;
-    overflow: scroll;
-    overflow-x: hidden;
+    //overflow: scroll;    ///////////////////////////////////////////
+    //overflow-x: hidden;  ///////////////////////////////////////////
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -44,7 +41,6 @@ html{
 
     h2{
         font-size: 2.5em;
-        margin-top: 500px;
         margin-bottom: 12px;
         font-family: Raleway-Regular;
     }
@@ -55,14 +51,23 @@ html{
     scroll-snap-align: start;
 }
 
+//////////////////////////////////////////////
+// Change the lines below so they support absolute position.
+//Have the text fade, and change on scroll via javascript.
+//There should only be one section for the buttons ect, per page.
+//Need to think of a system that can support this.
+//////////////////////////////////////////////
 .PageBodyText{
+    //////////////////////////////////////////////
     //position: absolute;
     //margin-bottom: 23%;
-    margin-bottom: -6%;
+    margin-bottom: -9%;
     text-align: center;
 }
 
 .PageButtonsContainer{
+    //////////////////////////////////////////////
+    //position: absolute;
     margin-top: 36%;
 }
 
@@ -74,7 +79,7 @@ html{
 
 .PageButton{
     width: 260px;
-    margin: 13px;
+    margin: 16px;
     border: none;
     padding: 12px;
     cursor: pointer;
@@ -83,7 +88,9 @@ html{
     font-weight: 500;
     font-size: 0.83em;
     font-family: Raleway-Regular;
-    margin-bottom: 450px;
+    //position:absolute;
+    //margin: -100px;
+    //top: 95%;
 }
 
 .BtnBlack{

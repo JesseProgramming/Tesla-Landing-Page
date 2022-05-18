@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
     return(
     <div>
-        <footer className="footermain">
+        <footer className="footermain" id="mainfooter">
             <ul>
                 <li>
                     <a href="#">Tesla © 2022</a>

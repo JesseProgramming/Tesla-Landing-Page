@@ -76,33 +76,36 @@ $(document).ready(function(){
 
 
       ////////////////////////////////////////////////////////////////////////////////////////////////
+      //Makes opacity a solid if the decimal place is close to 1 or 0
+      function OpacityCheck(IncomingOpacity){
+        if(IncomingOpacity < 0.1)
+          return IncomingOpacity = 0;
+        else if(IncomingOpacity > 0.98)
+          return IncomingOpacity = 1;
+        else
+          return IncomingOpacity;
+      }
 
         //Fade in & out when scrolling past the *top* of the page section
-        var screenheighttop = $(".MainHeader").offset().top + ($(window).height() * 1);
-        if($(window).scrollTop() - (screenheighttop - 400) > 0
-        && $(window).scrollTop() - (screenheighttop - 500) < 400){
-            var myOpacity = ($(window).scrollTop() - (screenheighttop - 400)) / 300;
-            //console.log(myOpacity);
-            if(myOpacity < 0.1)
-                myOpacity = 0;
-            if(myOpacity > 0.98)
-                myOpacity = 1;
+        var screenheighttop = $(".MainHeader").offset().top + ($(window).height() * 1);       //Get the top scroll position of this section
+        if($(window).scrollTop() - (screenheighttop - 400) > 0                                //If the scroll bar is in top of the fading zone
+        && $(window).scrollTop() - (screenheighttop - 500) < 400){                            //If the scroll bar is in bottom  of the fading zone
+            var myOpacity = ($(window).scrollTop() - (screenheighttop - 400)) / 300;          //Change opacity based on scroll position in the fade zone
+            myOpacity = OpacityCheck(myOpacity);
             $("#ModelY > div").css('display', 'block');
             $("#ModelY > div").css('opacity', myOpacity);
         }
         //Fade in & out when scrolling past the *bottom* of the page section
-        var screenbottom = $(".MainHeader").offset().top + ($(window).height() * 2);
-        if($(window).scrollTop() - (screenbottom - 200) > -400
-        && $(window).scrollTop() - (screenbottom - 300) < 0){
-            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 300;
-            console.log(myOpacity);
-            if(myOpacity < 0.1)
-                myOpacity = 0;
-            if(myOpacity > 0.98)
-                myOpacity = 1;
+        var screenbottom = $(".MainHeader").offset().top + ($(window).height() * 2);          //Get the bottom scroll position of this section
+        if($(window).scrollTop() - (screenbottom - 200) > -400                                //If the scroll bar is in top of the fading zone
+        && $(window).scrollTop() - (screenbottom - 300) < 0){                                 //If the scroll bar is in bottom  of the fading zone
+            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 300;   //Change opacity based on scroll position in the fade zone
+            myOpacity = OpacityCheck(myOpacity);
             $("#ModelY > div").css('display', 'block');
             $("#ModelY > div").css('opacity', myOpacity);
         }
+
+        
 
         ///////////////////////////////////////////////////////////////////////////////////////////
 

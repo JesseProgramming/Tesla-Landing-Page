@@ -93,7 +93,7 @@ $(document).ready(function(){
         var screenbottom = $(".MainHeader").offset().top + ($(window).height() * 2);
         if($(window).scrollTop() - (screenbottom - 200) > -200
         && $(window).scrollTop() - (screenbottom - 300) < 0){
-            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 200;
+            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 100;
             console.log(myOpacity);
             if(myOpacity < 0.1)
                 myOpacity = 0;

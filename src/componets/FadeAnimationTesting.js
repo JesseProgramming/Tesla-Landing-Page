@@ -1,3 +1,4 @@
+//On page load, play animations
 $(document).ready(function(){
   /*
   $("#Model3 > div > h2").hide();
@@ -78,9 +79,9 @@ $(document).ready(function(){
 
         //Fade in & out when scrolling past the *top* of the page section
         var screenheighttop = $(".MainHeader").offset().top + ($(window).height() * 1);
-        if($(window).scrollTop() - (screenheighttop - 300) > 0
-        && $(window).scrollTop() - (screenheighttop - 400) < 400){
-            var myOpacity = ($(window).scrollTop() - (screenheighttop - 300)) / 300;
+        if($(window).scrollTop() - (screenheighttop - 400) > 0
+        && $(window).scrollTop() - (screenheighttop - 500) < 400){
+            var myOpacity = ($(window).scrollTop() - (screenheighttop - 400)) / 300;
             //console.log(myOpacity);
             if(myOpacity < 0.1)
                 myOpacity = 0;
@@ -91,9 +92,9 @@ $(document).ready(function(){
         }
         //Fade in & out when scrolling past the *bottom* of the page section
         var screenbottom = $(".MainHeader").offset().top + ($(window).height() * 2);
-        if($(window).scrollTop() - (screenbottom - 200) > -200
+        if($(window).scrollTop() - (screenbottom - 200) > -400
         && $(window).scrollTop() - (screenbottom - 300) < 0){
-            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 100;
+            var myOpacity = Math.abs(($(window).scrollTop() - (screenbottom - 300))) / 300;
             console.log(myOpacity);
             if(myOpacity < 0.1)
                 myOpacity = 0;

@@ -59,16 +59,18 @@ body, html, div, p, h2{
 //////////////////////////////////////////////
 .PageBodyText{
     //////////////////////////////////////////////
-    //position: absolute;
-    //margin-bottom: 23%;
-    margin-bottom: -9%;
+    //position: fixed;
+    //top: 23%;
+    margin-top: 7%;
+    
     text-align: center;
 }
 
 .PageButtonsContainer{
     //////////////////////////////////////////////
-    //position: absolute;
-    margin-top: 36%;
+    //position: fixed;
+    //top: 75%;
+    margin-top: 25%;
 }
 
 .MainHeader .PageBody:nth-of-type(2n + 1){

@@ -34,7 +34,6 @@ export const RENDER_PAGE_BODY_INFO = [
         RightButtonLinkSource: '#',
         ShowBothButtons: true
     },
-    /*
     {
         ID: "ModelS",
         BackgroundImage: IMG_ModelS,
@@ -48,6 +47,7 @@ export const RENDER_PAGE_BODY_INFO = [
         RightButtonLinkSource: '#',
         ShowBothButtons: true
     }, 
+    
     {
         ID: "ModelX",
         BackgroundImage: IMG_ModelX,
@@ -100,5 +100,5 @@ export const RENDER_PAGE_BODY_INFO = [
         RightButtonLinkSource: '#',
         ShowBothButtons: false
     },
-     */
+     
 ]

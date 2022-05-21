@@ -9,6 +9,7 @@ function RenderAllButtons(props ){
         <div className="PageButtonsContainer">
             <button className='PageButton BtnBlack' href={RENDER_PAGE_BODY_INFO[props.index].LeftButtonLinkSource}>{RENDER_PAGE_BODY_INFO[props.index].LeftButtonText}</button>
             <button className='PageButton BtnWhite'href={RENDER_PAGE_BODY_INFO[props.index].RightButtonLinkSource}>{RENDER_PAGE_BODY_INFO[props.index].RightButtonText}</button>
+            <ShowBounceArrow index={props.index}/>
         </div>
         );
     }
@@ -16,10 +17,11 @@ function RenderAllButtons(props ){
         ReturnData.push(
         <div className="PageButtonsContainer">
             <button className='PageButton BtnBlack' href={RENDER_PAGE_BODY_INFO[props.index].LeftButtonLinkSource}>{RENDER_PAGE_BODY_INFO[props.index].LeftButtonText}</button>
+            <ShowBounceArrow index={props.index}/>
         </div>
         );      
     }
-    return ReturnData;
+    return ReturnData[0];
 }
 function ShowBounceArrow(props){
     let ReturnData = [];
@@ -34,7 +36,7 @@ function ShowBounceArrow(props){
             </a>
         );
     }
-    return ReturnData;
+    return ReturnData[0];
 }
 
 function RenderPageBody(){
@@ -47,7 +49,7 @@ function RenderPageBody(){
                     <p>{RENDER_PAGE_BODY_INFO[i].Description}<a href={RENDER_PAGE_BODY_INFO[i].DescriptionLinkSource}>{RENDER_PAGE_BODY_INFO[i].DescriptionLinkText}</a></p>
                 </div>
                 <RenderAllButtons index={i}/>
-                <ShowBounceArrow index={i}/>
+                
                 
             </div>
         );

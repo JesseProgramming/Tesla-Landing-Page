@@ -1,5 +1,18 @@
+//import {RENDER_PAGE_BODY_INFO} from './PageBodyData.js';
+//RENDER_PAGE_BODY_INFO = require('node-html-parser');
+
+
 //On page load, play animations
 $(document).ready(function(){
+  
+  let PageSectionList = [];
+  for(var i = 0; i < RENDER_PAGE_BODY_INFO.length; i++){
+    PageSectionList.push(RENDER_PAGE_BODY_INFO[i].ID);
+  }
+  
+  console.log("hi");
+
+
   /*
   $("#Model3 > div > h2").hide();
   $("#Model3 > div > h2").delay(1000).animate({top: '+=50px', opacity:'show'},'slow', 'linear');

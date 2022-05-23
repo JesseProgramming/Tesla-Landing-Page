@@ -15,7 +15,7 @@ function RenderAllButtons(props ){
     }
     else{
         ReturnData.push(
-        <div className="PageButtonsContainer">
+        <div className="PageButtonsContainer" style={{left: '50%'}}>
             <button className='PageButton BtnBlack' href={RENDER_PAGE_BODY_INFO[props.index].LeftButtonLinkSource}>{RENDER_PAGE_BODY_INFO[props.index].LeftButtonText}</button>
             <ShowBounceArrow index={props.index}/>
         </div>

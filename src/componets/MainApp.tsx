@@ -1,4 +1,5 @@
 import React from 'react';
+import './FadeAnimationNewTest.tsx';
 import '../styles/MainStyle.scss';
 import '../styles/NavTest2.scss';
 import '../styles/FooterStyle.scss';

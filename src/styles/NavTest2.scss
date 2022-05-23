@@ -1,6 +1,6 @@
 .NavBarHeader{
     position: fixed;
-    width: 95%;
+    width: 99%;
     margin-top: 1.75%;
 }
 
@@ -28,14 +28,22 @@ nav ul li {
 }
 .navLeft{
     flex-grow: 1;
+    position: absolute;
+    top: 1vh;
+    left: 6vw;
 }
 .navMid{
     flex-grow: 4;
+    position: absolute;
+    top: 1vh;
 }
 
 .navRight{
     flex-grow: 1;
     margin-right: -3%;
+    position: absolute;
+    top: 1vh;
+    right: 6vw;
 }
 
 .navRight li, .navMid li{

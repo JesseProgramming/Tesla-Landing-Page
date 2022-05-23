@@ -97,9 +97,7 @@ body, html, div, p, h2{
     left: 42.5%;
 }
 
-.MainHeader .PageBody:nth-of-type(2n + 1){
-    //background-color: lightblue;
-}
+
 
 
 
@@ -163,13 +161,7 @@ body, html, div, p, h2{
   }
 //Navbar change
 @media screen and (min-width: 1200px) {
-    p {
-        //color: blue;
-    }
 }
 //Other
 @media screen and (min-width: 1300px) {
-    p {
-        //color: yellow;
-    }
 }

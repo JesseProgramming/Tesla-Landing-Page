@@ -7,7 +7,6 @@ import '../styles/BounceArrow.scss';
 //import '../styles/NavStyleTest.scss';
 //import '../styles/NavStyle.scss';
 
-//import '../styles/test.css';
 // @ts-ignore
 import RenderPageBody from './/RenderPageBody.tsx'
 // @ts-ignore

@@ -4,10 +4,13 @@ footer{
     align-items: center;
     justify-content: center;
     bottom: 0.4%;
-    left: 31.5%;
+    //left: 31.5%;
+    left: 50%;
+    transform: translateX(-50%);
     ul{
         display: flex;
         justify-content: flex-end;
+        text-align: center;
         align-items: center;
 
     li{
@@ -37,3 +40,40 @@ footer{
     }
 }
 
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    footer ul{
+        display: block;
+    }
+    footer{
+        position: relative;
+        height: 30vh;
+        left: initial;
+        transform: initial;
+
+        li:nth-child(4),li:nth-child(7),li:nth-child(8){ 
+            display: none;
+        }
+        li{
+            margin: 15px;
+        }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    footer ul{
+        display: block;
+    }
+    footer{
+        position: relative;
+        height: 30vh;
+        left: initial;
+        transform: initial;
+
+        li:nth-child(4),li:nth-child(7),li:nth-child(8){ 
+            display: none;
+        }
+        li{
+            margin: 15px;
+        }
+    }
+}

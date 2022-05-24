@@ -85,3 +85,24 @@ nav ul li {
     height: 0.4em;
     //width: 1em;
 }
+
+@media screen and (max-width: 1200px) {
+    .navMid{
+        display: none;
+    }
+    .navRight{
+        right: 2vw;
+        li:nth-child(2), li:nth-child(1){ 
+            display: none;
+        }
+        li:nth-child(3){
+            background-color: rgba(11, 11, 58, 0.05);
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+        }
+    }
+}

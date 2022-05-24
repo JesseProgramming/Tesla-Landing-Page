@@ -1,3 +1,4 @@
+
 import {RENDER_PAGE_BODY_INFO} from './PageBodyData.js';
 
 window.onbeforeunload = function () {
@@ -26,18 +27,18 @@ $(document).ready(function(){
 
         $(".NavBarHeader").hide();
         $(".NavBarHeader").delay(100).animate({opacity:'show'},'slow', 'linear');
-        $(".BtnBlack").animate({opacity:'0%'},1);
-        $(".BtnWhite").animate({opacity:'0%'},1);
-        $(".BtnBlack").animate({left: '-=200px'}, 1);
-        $(".BtnWhite").animate({left: '+=200px'}, 1);
-        $(".BtnBlack").delay(1500).animate({left: '+=50px', opacity:'100%'},400, 'linear');
-        $(".BtnWhite").delay(1500).animate({left: '-=50px', opacity:'100%'},400, 'linear')
+        $("#Model3 > div > .BtnBlack").animate({opacity:'0%'},1);
+        $("#Model3 > div > .BtnWhite").animate({opacity:'0%'},1);
+        $("#Model3 > div > .BtnBlack").animate({left: '-=200px'}, 1);
+        $("#Model3 > div > .BtnWhite").animate({left: '+=200px'}, 1);
+        $("#Model3 > div > .BtnBlack").delay(1500).animate({left: '+=200px', opacity:'100%'},400, 'linear');
+        $("#Model3 > div > .BtnWhite").delay(1500).animate({left: '-=200px', opacity:'100%'},400, 'linear')
     }
     else
     {
         $("#Model3 > div").hide();
     }
-;
+
     
   
     //$("#d1").delay(500).animate({left: '+=50px', opacity:'show'},'slow', 'linear');
@@ -111,6 +112,37 @@ $(document).ready(function(){
             $("#mainfooter").delay(100).animate({opacity:'show'}, 200);
             isFooterHidden = false;
         }
+        //Sticky footer for mobile
+        var navbar = document.getElementById("Charger");
+        var sticky = navbar.offsetTop;
+        /*
+        if (window.pageYOffset >= sticky) {
+            //navbar.classList.add("absolute")
+            $('#Charger > .PageBodyText').css('position', 'relative');
+            $('#Charger > .PageBodyText').css('left', '0%');
+            $('#Charger > .PageBodyText').css('top', '-30%');
+            $('#Charger > .PageButtonsContainer').css('position', 'relative');
+            $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'relative');
+            $('#Charger > .PageButtonsContainer').css('left', '15%');
+            $('#Charger > .PageButtonsContainer').css('top', '33%');
+            $('#Charger > .PageBodyText > h2').css('color', 'green');
+        } else {
+            //navbar.classList.remove("absolute");
+            $('#Charger > .PageBodyText').css('position', 'fixed');
+            $('#Charger > .PageBodyText').css('left', '50%');
+            $('#Charger > .PageBodyText').css('top', '23%');
+            $('#Charger > .PageButtonsContainer').css('position', 'fixed');
+            $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'absolute');
+            $('#Charger > .PageButtonsContainer').css('left', '42.5%');
+            $('#Charger > .PageButtonsContainer').css('top', '82%');
+            $('#Charger > .PageBodyText > h2').css('color', 'red');
+        }
+        */
     });
   
-      
+
+
+
+
+
+   

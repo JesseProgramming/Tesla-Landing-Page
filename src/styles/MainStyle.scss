@@ -33,7 +33,7 @@ body, html, div, p, h2{
     background-size: cover;
     //background-size: contain;
     //background-size: auto 80%;
-    //background-size: 100%, 100%, contain;
+    //background-size: 100%, 100%;
 
     background-repeat: no-repeat;
     //background-size: 50% 80%;
@@ -58,6 +58,7 @@ body, html, div, p, h2{
     scroll-snap-align: start;
 }
 
+
 //////////////////////////////////////////////
 // Change the lines below so they support absolute position.
 //Have the text fade, and change on scroll via javascript.
@@ -67,7 +68,7 @@ body, html, div, p, h2{
 .PageBodyText{
     //////////////////////////////////////////////
     position: fixed;
-    top: 23%;
+    top: 18%;
     //margin-top: 7%;
     left: 50%;
     right: 50%;
@@ -77,7 +78,9 @@ body, html, div, p, h2{
         position: absolute;
         overflow: hidden;
         white-space: nowrap;
-        left: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+        //left: -2em;
     }
     p{
         position: absolute;
@@ -94,7 +97,7 @@ body, html, div, p, h2{
     position: fixed;
     top: 82%;
     //margin-top: 25%;
-    left: 42.5%;
+    //left: 42.5%;
 }
 
 
@@ -113,22 +116,29 @@ body, html, div, p, h2{
     font-size: 0.83em;
     font-family: Raleway-Regular;
     
-    position:absolute;
     //margin: -100px;
     //margin-top: 200%;
+    
 }
 
+////////////
+//Without buttons being absolute, they can not slide with jquery animations on page load
+////////////
 .BtnBlack{
     background-color: rgba(23, 26, 32, 0.8);
     backdrop-filter: blur(8px);
     color: white;
+    //position:absolute;
+    //left: -15vw;
+    
 }
 .BtnWhite{
     background-color: rgba(244, 244, 244, 0.65);
     backdrop-filter: blur(8px);
     color: black;
-    padding-left: 55px;
-    padding-right: 55px;
+    //position:absolute;
+    //left: -0vw;
+
 }
 
 .PageBody a{
@@ -144,24 +154,58 @@ body, html, div, p, h2{
 }
 
 //Button change
-@media screen and (min-width: 400px) and (max-width: 600px) {
+@media screen and (min-width: 20px) and (max-width: 600px) {
+    .PageBodyText{
+        top: 15%;
+    }
     .BtnBlack{
         //background-color: aqua;
         margin-top: -25px;
-        margin-left: -9vw;
+        //margin-left: -9vw;
         width: 90vw;
     }
     .BtnWhite{
         //background-color: aquamarine;
         //margin-bottom: -100px;
-        margin-top: 30px;
-        margin-left: -61vw;
+        margin-top: 0px;
+        //margin-left: -61vw;
         width: 90vw;
     }
+    .PageButtonsContainer{
+        left: 2%;
+    }
+    
   }
+@media screen and (max-width: 800px) {
+    #Model3{
+        background-image: url("../images/Model3-M.jpg") !important;
+    }
+    #ModelY{
+        background-image: url("../images/ModelY-M.jpg") !important;
+    }
+    #ModelS{
+        background-image: url("../images/ModelS-M.jpg") !important;
+    }
+    #ModelX{
+        background-image: url("../images/ModelX-M.jpg") !important;
+    }
+    #SolarPanels{
+        background-image: url("../images/SolarPanels-M.jpg") !important;
+    }
+    #SolarRoof{
+        background-image: url("../images/SolarRoof-M.jpg") !important;
+    }
+    #Charger{
+        background-image: url("../images/Charger-M.jpg") !important;
+    }
+}
 //Navbar change
 @media screen and (min-width: 1200px) {
 }
 //Other
 @media screen and (min-width: 1300px) {
 }
+
+//#Charger div h2{
+//    color: red;
+//}

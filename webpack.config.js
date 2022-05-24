@@ -40,11 +40,9 @@ module.exports = {
               },
               {
                 test: /\.(png|jpe?g|gif|ico)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ],
+                dependency: { not: ['url'] },
+                loader: 'file-loader',
+
               },
               {
                 test: /\.html$/i,

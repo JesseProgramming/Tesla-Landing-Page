@@ -39,9 +39,6 @@ $(document).ready(function(){
         $("#Model3 > div").hide();
     }
 
-    
-  
-    //$("#d1").delay(500).animate({left: '+=50px', opacity:'show'},'slow', 'linear');
     $("#mainfooter").hide();
     $("#ModelY > div").hide();
     $("#ModelS > div").hide();
@@ -63,11 +60,7 @@ $(document).ready(function(){
     function PageFading(){
         for(var index = 0; index < PageSectionList.length; index++)
         {
-            
             let Location = "#" + PageSectionList[index] + " > div";
-            //var em = document.getElementById(Location);
-            //var  temp = window.getComputedStyle(em).getPropertyValue("opacity");
-            //console.log(Location);
             //Fade in & out when scrolling past the *top* of the page section
             var screenheighttop = $(".MainHeader").offset().top + ($(window).height() * index);       //Get the top scroll position of this section
             var screenbottom = $(".MainHeader").offset().top + ($(window).height() * (index + 1));          //Get the bottom scroll position of this section
@@ -78,6 +71,13 @@ $(document).ready(function(){
                 $(Location).css('display', 'block');
                 $(Location).css('opacity', myOpacity);
             }
+            //Bottom of page specific, prevents text fading at bottom of page
+            else if($(window).scrollTop() > ($(window).height() * (RENDER_PAGE_BODY_INFO.length -1))
+            && index === RENDER_PAGE_BODY_INFO.length)
+            {
+                $(Location).css('display', 'block');
+                $(Location).css('opacity', 1);
+            }
             //Fade in & out when scrolling past the *bottom* of the page section
             else if($(window).scrollTop() - (screenbottom - 200) > -400                                //If the scroll bar is in top of the fading zone
             && $(window).scrollTop() - (screenbottom - 300) < 0){                                 //If the scroll bar is in bottom  of the fading zone
@@ -85,6 +85,7 @@ $(document).ready(function(){
                 myOpacity = OpacityCheck(myOpacity);
                 $(Location).css('display', 'block');
                 $(Location).css('opacity', myOpacity);
+                console.log("scroll enter bottom section");
             }
             //Makes sure opacity is solid while scrolling middle of a section beyond the fade regions.
             else if($(window).scrollTop() > screenheighttop - 400
@@ -92,6 +93,8 @@ $(document).ready(function(){
                 $(Location).css('display', 'block');
                 $(Location).css('opacity', 1);
             }
+            
+            
             //Hides the elements of a section completly even if the user scrolls too fast
             else{
                 $(Location).hide();
@@ -115,34 +118,59 @@ $(document).ready(function(){
         //Sticky footer for mobile
         var navbar = document.getElementById("Charger");
         var sticky = navbar.offsetTop;
-        /*
-        if (window.pageYOffset >= sticky) {
-            //navbar.classList.add("absolute")
-            $('#Charger > .PageBodyText').css('position', 'relative');
-            $('#Charger > .PageBodyText').css('left', '0%');
-            $('#Charger > .PageBodyText').css('top', '-30%');
-            $('#Charger > .PageButtonsContainer').css('position', 'relative');
-            $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'relative');
-            $('#Charger > .PageButtonsContainer').css('left', '15%');
-            $('#Charger > .PageButtonsContainer').css('top', '33%');
-            $('#Charger > .PageBodyText > h2').css('color', 'green');
-        } else {
-            //navbar.classList.remove("absolute");
-            $('#Charger > .PageBodyText').css('position', 'fixed');
-            $('#Charger > .PageBodyText').css('left', '50%');
-            $('#Charger > .PageBodyText').css('top', '23%');
-            $('#Charger > .PageButtonsContainer').css('position', 'fixed');
-            $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'absolute');
-            $('#Charger > .PageButtonsContainer').css('left', '42.5%');
-            $('#Charger > .PageButtonsContainer').css('top', '82%');
-            $('#Charger > .PageBodyText > h2').css('color', 'red');
-        }
-        */
+        
+        function FooterMediaQueryMobile(x) {
+            if(x.matches)
+            {
+                if (window.pageYOffset >= sticky - 50) {
+                    $('#Charger > .PageBodyText').css('position', 'relative');
+                    $('#Charger > .PageBodyText').css('left', '0%');
+                    $('#Charger > .PageBodyText').css('top', '-30%');
+                    $('#Charger > .PageButtonsContainer').css('position', 'relative');
+                    $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'relative');
+                    $('#Charger > .PageButtonsContainer').css('left', '0%');
+                    $('#Charger > .PageButtonsContainer').css('top', '33%');
+                } else {
+                    $('#Charger > .PageBodyText').css('position', 'fixed');
+                    $('#Charger > .PageBodyText').css('left', '50%');
+                    $('#Charger > .PageBodyText').css('top', '23%');
+                    $('#Charger > .PageButtonsContainer').css('position', 'fixed');
+                    $('#Charger > .PageButtonsContainer > .PageButton').css('position', 'absolute');
+                    $('#Charger > .PageButtonsContainer').css('left', '1%');
+                    $('#Charger > .PageButtonsContainer').css('top', '87%');
+                }                 
+            }
+          }
+          
+          var x = window.matchMedia("(max-width: 600px)")
+          FooterMediaQueryMobile(x) // Call listener function at run time
+          x.addListener(FooterMediaQueryMobile) // Attach listener function on state changes
+
+
+        
     });
-  
 
-
-
-
-
-   
+    //Timer if scrolling stoped. If stopped long enough, will scroll to nearest section
+    var timer = null;
+    window.addEventListener('scroll', function() {
+        if(timer !== null) {
+            clearTimeout(timer);        
+        }
+        timer = setTimeout(function() {
+            var screenHeightIndex = 0;
+            for(var i = 0; i < RENDER_PAGE_BODY_INFO.length; i++){
+                var screenheighttop = $(".MainHeader").offset().top + ($(window).height() * screenHeightIndex); 
+                var screenbottom = $(".MainHeader").offset().top + ($(window).height() * i); 
+                var win = $(window).scrollTop();
+                    screenHeightIndex = Math.abs(screenbottom - win) < Math.abs(screenheighttop - win) ? i : screenHeightIndex;
+            }
+            //Prevents scroll snapping at bottom of page
+            if($(window).scrollTop() < ($(window).height() * (RENDER_PAGE_BODY_INFO.length -1)))
+            {
+                $('html,body').animate({
+                    scrollTop: $(window).height() * screenHeightIndex
+                }, 250, 'swing');
+            }
+            
+        }, 500);
+    }, false);

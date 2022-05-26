@@ -71,12 +71,12 @@ $(document).ready(function(){
                 $(Location).css('display', 'block');
                 $(Location).css('opacity', myOpacity);
             }
-            //Bottom of page specific, prevents text fading at bottom of page
+            //Bottom of page specific, prevents text fading at bottom of page 
             else if($(window).scrollTop() > ($(window).height() * (RENDER_PAGE_BODY_INFO.length -1))
             && index === RENDER_PAGE_BODY_INFO.length)
             {
                 $(Location).css('display', 'block');
-                $(Location).css('opacity', 1);
+                $(Location).css('opacity', 1); 
             }
             //Fade in & out when scrolling past the *bottom* of the page section
             else if($(window).scrollTop() - (screenbottom - 200) > -400                                //If the scroll bar is in top of the fading zone
@@ -174,3 +174,4 @@ $(document).ready(function(){
             
         }, 500);
     }, false);
+

@@ -2,6 +2,13 @@
 import React from 'react';
 import {RENDER_PAGE_BODY_INFO} from './PageBodyData.js';
 
+function ArrowBounceAnimation() {
+    console.log("clicked");
+    $('html,body').animate({
+        scrollTop: $(window).height() * 1
+    }, 400, 'swing');
+}
+
 function RenderAllButtons(props ){
     let ReturnData = [];
     if(RENDER_PAGE_BODY_INFO[props.index].ShowBothButtons === true){
@@ -27,13 +34,13 @@ function ShowBounceArrow(props){
     let ReturnData = [];
     if(RENDER_PAGE_BODY_INFO[props.index].ShowBounceArrow === true){
         ReturnData.push(
-            <a href="#ModelY">
+            <span onClick={ArrowBounceAnimation}>
             <div className="arrow bounce">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 </svg>
             </div>
-            </a>
+            </span>
         );
     }
     return ReturnData[0];

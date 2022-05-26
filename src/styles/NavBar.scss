@@ -1,3 +1,23 @@
+#report-banner{
+    background-color: white;
+    width: 100vw;
+    margin-top: -2%;
+    padding: 18px;
+    
+
+    .center{
+        margin: auto;
+        width: 66vw;
+        text-align: center;
+        align-items: center;
+    }
+    a{
+        color: black;
+        font-family: Raleway-Regular, Arial, Helvetica, sans-serif;
+        white-space: nowrap;
+    }
+}
+
 .NavBarHeader{
     position: fixed;
     width: 99%;
@@ -105,4 +125,12 @@ nav ul li {
             backdrop-filter: blur(8px);
         }
     }
+    .NavBarHeader{
+        margin-top: 10%;
+    }
+    #report-banner{
+        margin-top: -10%;
+    }
+
+
 }

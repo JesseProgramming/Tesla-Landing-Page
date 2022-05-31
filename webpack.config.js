@@ -38,11 +38,21 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
               },
-              {
+              /*{
                 test: /\.(png|jpe?g|gif|ico)$/i,
                 dependency: { not: ['url'] },
-                loader: 'file-loader',
+                loader:
+                    'file-loader',
+              },*/
+              {
+                test: /\.(png|jpg|webp|gif|svg|mp4)$/,
+                dependency: { not: ['url'] },
+                use: [
+                       {
+                           loader: 'file-loader',
 
+                       }
+                     ]
               },
               {
                 test: /\.html$/i,

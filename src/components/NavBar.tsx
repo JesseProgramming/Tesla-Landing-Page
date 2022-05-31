@@ -8,8 +8,8 @@ function NavBar() {
     return(
         <div className="NavBarHeader">
             <div id="report-banner">
-                <div class="center">
-                    <a href="">Read Tesla's 2021 Impact Report</a>
+                <div className="center">
+                    <a href="#" rel="nofollow">Read Tesla's 2021 Impact Report</a>
                 </div>
             </div>
             <nav>
